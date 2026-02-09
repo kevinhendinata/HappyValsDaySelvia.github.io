@@ -1,226 +1,279 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day Selvia 💕</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23ff69b4"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'), auto;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day Selvia 💕</title>
 
-        body {
-            font-family: 'Segoe UI', 'Comic Sans MS', cursive, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow-x: hidden;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    cursor:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="%23ff69b4"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'),auto;
+}
 
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 60px 50px;
-            border-radius: 30px;
-            max-width: 600px;
-            border: 3px solid #d4af37;
-        }
+body{
+    font-family:'Segoe UI','Comic Sans MS',cursive,sans-serif;
+    background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 
-        .page { display: none; }
-        .page.active { display: block; animation: fadeIn 0.6s ease; }
+.container{
+    background:rgba(255,255,255,0.95);
+    padding:60px 50px;
+    border-radius:30px;
+    max-width:600px;
+    text-align:center;
+    border:3px solid #d4af37;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
+.page{display:none;}
+.page.active{display:block;animation:fadeIn .6s ease;}
 
-        h1 {
-            color: #1a1a2e;
-            font-size: 2.4em;
-            margin-bottom: 20px;
-        }
+@keyframes fadeIn{
+    from{opacity:0;transform:scale(.95);}
+    to{opacity:1;transform:scale(1);}
+}
 
-        p {
-            font-size: 1.25em;
-            line-height: 1.6;
-            margin: 20px 0;
-            color: #333;
-        }
+h1{font-size:2.4em;margin-bottom:20px;color:#1a1a2e;}
+p{font-size:1.25em;line-height:1.6;margin:20px 0;color:#333;}
+.emoji{font-size:2.6em;margin-bottom:10px;}
 
-        .emoji { font-size: 2.8em; margin-bottom: 15px; }
+button,.link-button,.wa-button{
+    padding:16px 40px;
+    border-radius:50px;
+    border:none;
+    font-size:1.2em;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:25px;
+}
 
-        button, .link-button, .wa-button {
-            padding: 16px 40px;
-            border-radius: 50px;
-            border: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 25px;
-        }
+.yes-btn{
+    background:linear-gradient(135deg,#d4af37,#f4e5c3);
+    color:#1a1a2e;
+}
 
-        .yes-btn {
-            background: linear-gradient(135deg, #d4af37, #f4e5c3);
-            color: #1a1a2e;
-        }
+.no-btn{
+    background:#aaa;
+    color:white;
+    position:absolute;
+}
 
-        .no-btn {
-            background: #aaa;
-            color: white;
-            position: absolute;
-        }
+.button-container{
+    position:relative;
+    height:120px;
+    margin-top:30px;
+}
 
-        .button-container {
-            position: relative;
-            height: 120px;
-            margin-top: 30px;
-        }
+.link-button,.wa-button{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+}
 
-        .link-button {
-            display: inline-block;
-            text-decoration: none;
-            background: linear-gradient(135deg, #0f3460, #16213e);
-            color: white;
-        }
+.link-button{
+    background:linear-gradient(135deg,#0f3460,#16213e);
+}
 
-        .wa-button {
-            display: inline-block;
-            text-decoration: none;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-        }
-    </style>
+.wa-button{
+    background:linear-gradient(135deg,#25D366,#128C7E);
+}
+</style>
 </head>
 
 <body>
 <div class="container">
 
-    <!-- Page 1 -->
-    <div id="page1" class="page active">
-        <div class="emoji">💝</div>
-        <h1>Happy Valentine's Day</h1>
-        <h1 style="color:#d4af37;">Selvia Anggriani</h1>
-         <p> class="from">From me (siap lagi kalau bukan saya)</p>
-          <p> be ready for some surprises</p>
-        <button class="yes-btn" onclick="nextPage(2)">Let's Go 💕</button>
-    </div>
+<!-- PAGE 1 -->
+<div id="page1" class="page active">
+    <div class="emoji">💝</div>
+    <h1>Happy Valentine's Day</h1>
+    <h1 style="color:#d4af37;">Selvia Anggriani</h1>
+    <p>From me, siapa lagi kalau bukan saya</p>
+    <p>Be ready for some surprises ✨</p>
+    <button class="yes-btn" onclick="nextPage(2)">Let's Go 💕</button>
+</div>
 
-    <!-- Page 2 (NEW – before question) -->
-    <div id="page2" class="page">
-        <p>
-            Even though we are far apart on our first Valentine together,  
-            I want this moment to feel special, just for us.
-        </p>
-        <button class="yes-btn" onclick="nextPage(3)">Next 💫</button>
-    </div>
+<!-- PAGE 2 -->
+<div id="page2" class="page">
+    <p>
+        Even though we are far apart on our first Valentine together,  
+        I want this moment to feel special, just for us.
+    </p>
+    <button class="yes-btn" onclick="nextPage(3)">Next 💫</button>
+</div>
 
-    <!-- Page 3 -->
-    <div id="page3" class="page">
-        <div class="emoji">💖</div>
-        <p class="question" style="font-size:2em;font-weight:bold;">Will You Be My Valentine?</p>
-        <div class="button-container" id="buttonContainer">
-            <button class="yes-btn" id="yesBtn" onclick="nextPage(4)">Yes 💕</button>
-            <button class="no-btn" id="noBtn">No</button>
-        </div>
+<!-- PAGE 3 -->
+<div id="page3" class="page">
+    <div class="emoji">💖</div>
+    <p style="font-size:2em;font-weight:bold;">Will you be my Valentine?</p>
+    <div class="button-container" id="buttonContainer">
+        <button class="yes-btn" id="yesBtn" onclick="nextPage(4)">Yes 💕</button>
+        <button class="no-btn" id="noBtn">No</button>
     </div>
+</div>
 
-    <!-- Page 4 -->
-    <div id="page4" class="page">
-        <div class="emoji">🌍</div>
-        <h1>Distance doesn't Matter</h1>
-        <p>We've done more distance before, and stayed strong for years.</p>
-        <p>Now a new chapter, closer, but still with a little space.</p>
-        <p>And I'm sure we'll get through it together.</p>
-        <button class="yes-btn" onclick="nextPage(5)">Next 💛</button>
-    </div>
+<!-- PAGE 4 -->
+<div id="page4" class="page">
+    <p style="font-size:1.6em;font-weight:bold;">Are you sure?</p>
+    <button class="yes-btn" onclick="nextPage(5)">Yes 💖</button>
+    <button class="yes-btn" onclick="nextPage(5)">Yes 😌</button>
+</div>
 
-    <!-- Page 5 (Grow Together) -->
-    <div id="page5" class="page">
-        <p>
-            We grow together, learning, becoming better,  
-            and preparing ourselves for the next step
-        </p>
-        <button class="yes-btn" onclick="nextPage(6)">Next 🌱</button>
-    </div>
+<!-- PAGE 5 -->
+<div id="page5" class="page">
+    <p style="font-size:1.6em;font-weight:bold;">Yakin kah bebb??</p>
+    <button class="yes-btn" onclick="nextPage(6)">Yes 💕</button>
+    <button class="yes-btn" onclick="nextPage(6)">YES 🥰</button>
+</div>
 
-    <!-- Page 6 (Pantun) -->
-    <div id="page6" class="page">
-        <p style="font-weight:bold;">
-            Ikan hiu minum teh anget☕<br>
-            I love you sayang pake banget 💕
-        </p>
-        <button class="yes-btn" onclick="nextPage(7)">Next 😄</button>
-    </div>
+<!-- PAGE 6 -->
+<div id="page6" class="page">
+    <p>
+        Thank you beb, and I'm really glad to have you😚.  
+        You make everything feel warmer, softer, and somehow more exciting.
+    </p>
+    <p>
+        And honestly… having you this close to my heart feels dangerously addictive.
+    </p>
+    <button class="yes-btn" onclick="nextPage(7)">Next 😌</button>
+</div>
 
-    <!-- Page 7 (Gombalan) -->
-    <div id="page7" class="page">
-        <p style="font-weight:bold;">punten masih mau gombal</p>
-        <p>
-            Honestly, sometimes I still wonder,
-            how can someone be this beautiful, inside and out?
-            eaaa wkwkwk
-        </p>
-        <button class="yes-btn" onclick="nextPage(8)">Next ✨</button>
-    </div>
+<!-- PAGE 7 -->
+<div id="page7" class="page">
+    <p>
+        Very happy to have you after all our journeys💞.  
+        We’ve been through so much, and now, we’re here, at this step, together.
+    </p>
+    <button class="yes-btn" onclick="nextPage(8)">Next 💫</button>
+</div>
 
-    <!-- Page 8 (Looking Forward – Part 1) -->
-    <div id="page8" class="page">
-        <h1>Looking Forward To</h1>
-        <p>More adventures together🗺️</p>
-        <p>More “maen-maen🤤” moments</p>
-        <p>More inside jokes only we understand🤫</p>
-        <button class="yes-btn" onclick="nextPage(9)">Next 📸</button>
-    </div>
+<!-- PAGE 8 -->
+<div id="page8" class="page">
+    <div class="emoji">🌍</div>
+    <h1>Distance Doesn't Matter</h1>
+    <p>
+        We've done long distance before, stayed strong for years.  
+        Now we’re closer, even if there’s still a little distance.
+    </p>
+    <p>
+        And we will meet soon, baby.  
+        Soon, sayang. Very soon.
+    </p>
+    <button class="yes-btn" onclick="nextPage(9)">Next 💛</button>
+</div>
 
-    <!-- Page 9 (Gallery) -->
-    <div id="page9" class="page">
-        <p>
-            Our photos, screenshots, random memories,  
-            and pictures of you I somehow found everywhere.
-        </p>
-        <a href="#" class="link-button" target="_blank">Go to our galleries 💕</a><br>
-        <button class="yes-btn" onclick="nextPage(10)">Next 💖</button>
-    </div>
+<!-- PAGE 9 -->
+<div id="page9" class="page">
+    <p style="font-weight:bold;">punten mau gombal dikit beb</p>
+    <p>
+        Ikan hiu minum teh anget ☕<br>
+        I love you sayang pake banget 💕
+        WKWKWK
+    </p>
+    <button class="yes-btn" onclick="nextPage(10)">Next 😄</button>
+</div>
 
-    <!-- Page 10 (Final) -->
-    <div id="page10" class="page">
-        <div class="emoji">💖</div>
-        <h1>Always Be My Valentine</h1>
-        <p>
-            Not just today, but in every version of our future.  
-            I choose you, always.
-        </p>
-        <p>- Kevin 😊</p>
-        <a href="https://wa.me/6285725625105" class="wa-button" target="_blank">💬 Call Me!</a>
-    </div>
+<!-- PAGE 10 (BARU) -->
+<div id="page10" class="page">
+    <p>
+        Honestly, sometimes I still wonder,<br>
+        how can someone be this beautiful,<br>
+        inside and out?  
+        <br><br>
+        eaaa wkwkwk 😳💖
+    </p>
+    <button class="yes-btn" onclick="nextPage(11)">Next 😌</button>
+</div>
+
+<!-- PAGE 11 (SPICY) -->
+<div id="page11" class="page">
+    <p>
+        Just being honest for a moment, baby.  
+        Sometimes I realize,  
+        you don’t just make me miss you,  
+        you make every moment with you feel a little more… tempting🤫.
+        <br><br>
+        And that feeling?  
+        It’s only yours😚.
+    </p>
+    <button class="yes-btn" onclick="nextPage(12)">Next 😌</button>
+</div>
+
+<!-- PAGE 12 -->
+<div id="page12" class="page">
+    <h1>Looking Forward To</h1>
+    <p>More adventures together 🗺️</p>
+    <p>More “maen-maen🤤” moments</p>
+    <p>More inside jokes only we understand🤫</p>
+    <p><em>More moments with you.</em></p>
+    <button class="yes-btn" onclick="nextPage(13)">Next 📸</button>
+</div>
+
+<!-- PAGE 13 -->
+<div id="page13" class="page">
+    <p>
+        Our photos, screenshots, random memories,  
+        and pictures of you I somehow found everywhere.
+    </p>
+    <a href="#" class="link-button" target="_blank">Go to our gallery 💕</a><br>
+    <button class="yes-btn" onclick="nextPage(14)">Next 💖</button>
+</div>
+
+<!-- PAGE 14 -->
+<div id="page14" class="page">
+    <div class="emoji">💖</div>
+    <p>
+        Baby, you’re not just my Valentine today.  
+        You’re the person I want to laugh with, grow with, and come home to.
+    </p>
+    <button class="yes-btn" onclick="nextPage(15)">Next 😘</button>
+</div>
+
+<!-- PAGE 15 -->
+<div id="page15" class="page">
+    <p>
+        Not just today, but in every version of our future,  
+        I choose you. Now and later.
+    </p>
+    <button class="yes-btn" onclick="nextPage(16)">Next 💞</button>
+</div>
+
+<!-- PAGE 16 -->
+<div id="page16" class="page">
+    <h1>Always Be My Valentine</h1>
+    <p>- Kevin 😊</p>
+    <p> your bf, not a prof🙏 </p>
+    <a href="https://wa.me/6285725625105" class="wa-button" target="_blank">💬 Call Me!</a>
+</div>
+
 
 </div>
 
 <script>
-    let noClickCount = 0;
-    const noBtn = document.getElementById('noBtn');
-    const yesBtn = document.getElementById('yesBtn');
-    const buttonContainer = document.getElementById('buttonContainer');
+let noClickCount=0;
+const noBtn=document.getElementById('noBtn');
+const yesBtn=document.getElementById('yesBtn');
 
-    noBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        noClickCount++;
-        const maxX = 200, maxY = 60;
-        noBtn.style.left = Math.random() * maxX + 'px';
-        noBtn.style.top = Math.random() * maxY + 'px';
-        noBtn.style.transform = `scale(${Math.max(0.2, 1 - noClickCount * 0.15)})`;
-    });
+noBtn.addEventListener('click',e=>{
+    e.preventDefault();
+    noClickCount++;
+    noBtn.style.left=Math.random()*200+'px';
+    noBtn.style.top=Math.random()*60+'px';
+    noBtn.style.transform=`scale(${Math.max(.2,1-noClickCount*.15)})`;
+});
 
-    function nextPage(n) {
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.getElementById('page' + n).classList.add('active');
-        window.scrollTo(0, 0);
-    }
+function nextPage(n){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    document.getElementById('page'+n).classList.add('active');
+    window.scrollTo(0,0);
+}
 </script>
+
 </body>
 </html>
