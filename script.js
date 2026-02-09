@@ -63,6 +63,7 @@ const maxClicks = 15; // Increased from 8 to 15
 function moveNoButton() {
     clickCount++;
     const noBtn = document.getElementById('noBtn');
+    noBtn.style.position = 'absolute';
     const yesBtn = document.getElementById('yesBtn');
     const container = document.querySelector('#page2 .content');
     const containerRect = container.getBoundingClientRect();
