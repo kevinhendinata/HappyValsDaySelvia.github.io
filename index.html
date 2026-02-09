@@ -20,41 +20,6 @@
             justify-content: center;
             align-items: center;
             overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Floating hearts animation */
-        .heart-bg {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .heart-bg span {
-            position: absolute;
-            bottom: -50px;
-            color: rgba(255, 215, 0, 0.3);
-            font-size: 24px;
-            animation: rise 15s infinite ease-in;
-        }
-
-        .heart-bg span:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .heart-bg span:nth-child(2) { left: 25%; animation-delay: 2s; font-size: 18px; }
-        .heart-bg span:nth-child(3) { left: 40%; animation-delay: 4s; }
-        .heart-bg span:nth-child(4) { left: 55%; animation-delay: 6s; font-size: 20px; }
-        .heart-bg span:nth-child(5) { left: 70%; animation-delay: 8s; }
-        .heart-bg span:nth-child(6) { left: 85%; animation-delay: 10s; font-size: 22px; }
-        .heart-bg span:nth-child(7) { left: 15%; animation-delay: 3s; }
-        .heart-bg span:nth-child(8) { left: 60%; animation-delay: 7s; font-size: 19px; }
-
-        @keyframes rise {
-            to {
-                bottom: 110%;
-                transform: translateX(50px) rotate(360deg);
-            }
         }
 
         .container {
@@ -62,356 +27,199 @@
             background: rgba(255, 255, 255, 0.95);
             padding: 60px 50px;
             border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             max-width: 600px;
-            position: relative;
-            z-index: 1;
             border: 3px solid #d4af37;
         }
 
-        .page {
-            display: none;
-        }
-
-        .page.active {
-            display: block;
-            animation: fadeIn 0.8s ease-in;
-        }
+        .page { display: none; }
+        .page.active { display: block; animation: fadeIn 0.6s ease; }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         h1 {
             color: #1a1a2e;
-            font-size: 2.8em;
+            font-size: 2.4em;
             margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(212, 175, 55, 0.3);
-        }
-
-        .from {
-            color: #555;
-            font-size: 1.1em;
-            margin-top: 15px;
-            font-style: italic;
         }
 
         p {
-            color: #333;
-            font-size: 1.3em;
-            margin: 25px 0;
+            font-size: 1.25em;
             line-height: 1.6;
+            margin: 20px 0;
+            color: #333;
         }
 
-        .question {
-            font-size: 2em;
-            font-weight: bold;
-            color: #0f3460;
-            margin: 30px 0;
-        }
+        .emoji { font-size: 2.8em; margin-bottom: 15px; }
 
-        .button-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
-            margin-top: 40px;
-            flex-wrap: wrap;
-            position: relative;
-            min-height: 100px;
-        }
-
-        button {
-            padding: 18px 40px;
-            font-size: 1.3em;
-            border: none;
+        button, .link-button, .wa-button {
+            padding: 16px 40px;
             border-radius: 50px;
+            border: none;
+            font-size: 1.2em;
             font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            font-family: 'Segoe UI', cursive, sans-serif;
+            cursor: pointer;
+            margin-top: 25px;
         }
 
         .yes-btn {
-            background: linear-gradient(135deg, #d4af37 0%, #f4e5c3 100%);
+            background: linear-gradient(135deg, #d4af37, #f4e5c3);
             color: #1a1a2e;
-            transform: scale(1);
-        }
-
-        .yes-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
         }
 
         .no-btn {
-            background: linear-gradient(135deg, #888 0%, #aaa 100%);
+            background: #aaa;
             color: white;
             position: absolute;
-            transition: all 0.3s ease;
         }
 
-        .no-btn:hover {
-            transform: scale(0.95);
-        }
-
-        .emoji {
-            font-size: 3em;
-            margin: 20px 0;
+        .button-container {
+            position: relative;
+            height: 120px;
+            margin-top: 30px;
         }
 
         .link-button {
             display: inline-block;
-            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
-            color: white;
-            padding: 20px 50px;
             text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.2em;
-            margin-top: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(15, 52, 96, 0.4);
-            font-weight: bold;
-        }
-
-        .link-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(15, 52, 96, 0.6);
-        }
-
-        .small-text {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        .highlight {
-            color: #d4af37;
-            font-weight: bold;
+            background: linear-gradient(135deg, #0f3460, #16213e);
+            color: white;
         }
 
         .wa-button {
             display: inline-block;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: white;
-            padding: 15px 40px;
             text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.1em;
-            margin-top: 25px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-            font-weight: bold;
-        }
-
-        .wa-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 40px 30px;
-                margin: 20px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .question {
-                font-size: 1.5em;
-            }
-            
-            button {
-                padding: 15px 30px;
-                font-size: 1.1em;
-            }
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
         }
     </style>
 </head>
+
 <body>
-    <div class="heart-bg">
-        <span>💛</span>
-        <span>💖</span>
-        <span>💛</span>
-        <span>💕</span>
-        <span>💛</span>
-        <span>💝</span>
-        <span>💛</span>
-        <span>💞</span>
+<div class="container">
+
+    <!-- Page 1 -->
+    <div id="page1" class="page active">
+        <div class="emoji">💝</div>
+        <h1>Happy Valentine's Day</h1>
+        <h1 style="color:#d4af37;">Selvia Anggriani</h1>
+        <p class="from">From me (siap lagi kalau bukan saya)
+            be ready for some surprises</p>
+        <button class="yes-btn" onclick="nextPage(2)">Let's Go 💕</button>
     </div>
 
-    <div class="container">
-        <!-- Page 1: Welcome -->
-        <div id="page1" class="page active">
-            <div class="emoji">💝</div>
-            <h1>Happy Valentine's Day</h1>
-            <h1 style="color: #d4af37;">Selvia Anggriani</h1>
-            <p class="from">From me (siapa lagi kalau bukan saya)</p>
-            <p style="margin-top: 30px;">Tap untuk lanjut ke next page ya... 😊</p>
-            <button class="yes-btn" onclick="nextPage(2)" style="margin-top: 30px;">Let's Go! 💕</button>
-        </div>
+    <!-- Page 2 (NEW – before question) -->
+    <div id="page2" class="page">
+        <p>
+            Even though we are far apart on our first Valentine together,  
+            I want this moment to feel special, just for us.
+        </p>
+        <button class="yes-btn" onclick="nextPage(3)">Next 💫</button>
+    </div>
 
-        <!-- Page 2: The Question -->
-        <div id="page2" class="page">
-            <div class="emoji">💖</div>
-            <p class="question">Will You Be My Valentine?</p>
-            <div class="button-container" id="buttonContainer">
-                <button class="yes-btn" id="yesBtn" onclick="nextPage(3)">Yes! 💕</button>
-                <button class="no-btn" id="noBtn">No</button>
-            </div>
-        </div>
-
-        <!-- Page 3: Confirmation -->
-        <div id="page3" class="page">
-            <div class="emoji">😳</div>
-            <p class="question">Are you really sure?</p>
-            <p>Like... really really sure? 🥺</p>
-            <div class="button-container">
-                <button class="yes-btn" onclick="nextPage(4)">Yes! 💯</button>
-                <button class="yes-btn" onclick="nextPage(4)" style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); color: white;">YES! 🎉</button>
-            </div>
-        </div>
-
-        <!-- Page 4: Distance -->
-        <div id="page4" class="page">
-            <div class="emoji">🌍</div>
-            <h1>Distance Doesn't Matter 💞</h1>
-            <p>We've done more distance before, stayed strong for 2 years... 💪</p>
-            <p>New chapter sekarang: closer distance, but still ada jarak sih.</p>
-            <p>But I'm sure we'll pass it together 🌟</p>
-            <button class="yes-btn" onclick="nextPage(5)" style="margin-top: 30px;">Next 💕</button>
-        </div>
-
-        <!-- Page 5: Pantun Time -->
-        <div id="page5" class="page">
-            <div class="emoji">🦈</div>
-            <p style="font-size: 1.4em; font-weight: bold; color: #0f3460;">Oke oke, ada pantun nih...</p>
-            <p style="font-size: 1.3em; margin: 25px 0; line-height: 1.8;">
-                Ikan hiu makan tomat 🍅<br>
-                I love you, cintaku hebat 💕
-            </p>
-            <p>Cheesy? Maybe. But it's true tho 😘</p>
-            <button class="yes-btn" onclick="nextPage(6)" style="margin-top: 30px;">Haha, lanjut! 😄</button>
-        </div>
-
-        <!-- Page 6: Another Gombalan -->
-        <div id="page6" class="page">
-            <div class="emoji">✨</div>
-            <p style="font-size: 1.4em; font-weight: bold; color: #0f3460;">One more gombalan nih...</p>
-            <p style="font-size: 1.3em; margin: 25px 0; line-height: 1.8;">
-                Jalan-jalan ke pantai Kuta 🏖️<br>
-                Jangan lupa bawa kamera 📷<br>
-                Boleh nggak aku cinta kamu terus? 💕<br>
-                Soalnya tanpa kamu hidupku hampa 🥺
-            </p>
-            <p>Okay that was super cheesy 🧀😂</p>
-            <button class="yes-btn" onclick="nextPage(7)" style="margin-top: 30px;">Next! 🎉</button>
-        </div>
-
-        <!-- Page 7: Looking Forward -->
-        <div id="page7" class="page">
-            <div class="emoji">📸</div>
-            <h1>Looking Forward To... 🌟</h1>
-            <p>More adventures together 🎢</p>
-            <p>More inside jokes that only we understand 😆</p>
-            <p>Foto bareng kita, screenshots, sampai foto-fotomu yang nemu di entah berantah 📱</p>
-            <a href="#" class="link-button" target="_blank" id="galleryLink">Lihat Galeri Kita 💕</a>
-            <p class="small-text">(Link bakal diisi sama Kevin nanti)</p>
-            <button class="yes-btn" onclick="nextPage(8)" style="margin-top: 30px;">Sweet! Next 🥰</button>
-        </div>
-
-        <!-- Page 8: Final -->
-        <div id="page8" class="page">
-            <div class="emoji">💖</div>
-            <h1>Always Be My Valentine</h1>
-            <p style="font-size: 1.4em; margin: 30px 0;">Love you always 💕</p>
-            <p style="margin-top: 20px;">- Kevin 😊</p>
-            <a href="https://wa.me/6285725625105" class="wa-button" target="_blank">💬 Chat Me!</a>
+    <!-- Page 3 -->
+    <div id="page3" class="page">
+        <div class="emoji">💖</div>
+        <p class="question" style="font-size:2em;font-weight:bold;">Will You Be My Valentine?</p>
+        <div class="button-container" id="buttonContainer">
+            <button class="yes-btn" id="yesBtn" onclick="nextPage(4)">Yes 💕</button>
+            <button class="no-btn" id="noBtn">No</button>
         </div>
     </div>
 
-    <script>
-        let noClickCount = 0;
-        const noBtn = document.getElementById('noBtn');
-        const yesBtn = document.getElementById('yesBtn');
-        const buttonContainer = document.getElementById('buttonContainer');
+    <!-- Page 4 -->
+    <div id="page4" class="page">
+        <div class="emoji">🌍</div>
+        <h1>Distance doesn't Matter</h1>
+        <p>We've done more distance before, and stayed strong for years.</p>
+        <p>Now a new chapter, closer, but still with a little space.</p>
+        <p>And I'm sure we'll get through it together.</p>
+        <button class="yes-btn" onclick="nextPage(5)">Next 💛</button>
+    </div>
 
-        // No button behavior - moves randomly and shrinks
-        noBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            noClickCount++;
+    <!-- Page 5 (Grow Together) -->
+    <div id="page5" class="page">
+        <p>
+            We grow together, learning, becoming better,  
+            and preparing ourselves for the next step
+        </p>
+        <button class="yes-btn" onclick="nextPage(6)">Next 🌱</button>
+    </div>
 
-            // Get container dimensions
-            const containerRect = buttonContainer.getBoundingClientRect();
-            
-            // Random position within container
-            const maxX = containerRect.width - noBtn.offsetWidth - 40;
-            const maxY = containerRect.height - noBtn.offsetHeight - 40;
-            
-            const randomX = Math.random() * maxX;
-            const randomY = Math.random() * maxY;
-            
-            // Apply random position
-            noBtn.style.left = randomX + 'px';
-            noBtn.style.top = randomY + 'px';
-            
-            // Shrink the button
-            const newScale = Math.max(0.1, 1 - (noClickCount * 0.15));
-            noBtn.style.transform = `scale(${newScale})`;
-            
-            // Grow the yes button
-            const yesScale = 1 + (noClickCount * 0.15);
-            yesBtn.style.transform = `scale(${yesScale})`;
-            
-            // Make it harder to click
-            if (noClickCount > 5) {
-                noBtn.style.opacity = Math.max(0, 1 - ((noClickCount - 5) * 0.15));
-            }
-            
-            // Eventually hide it
-            if (noClickCount > 8) {
-                noBtn.style.display = 'none';
-            }
-        });
+    <!-- Page 6 (Pantun) -->
+    <div id="page6" class="page">
+        <p style="font-weight:bold;">
+            Ikan hiu makan karet<br>
+            I love you sayang pake banget 💕
+        </p>
+        <button class="yes-btn" onclick="nextPage(7)">Next 😄</button>
+    </div>
 
-        // Yes button grows on hover
-        yesBtn.addEventListener('mouseenter', function() {
-            const currentScale = 1 + (noClickCount * 0.15);
-            this.style.transform = `scale(${currentScale * 1.1})`;
-        });
+    <!-- Page 7 (Gombalan) -->
+    <div id="page7" class="page">
+        <p style="font-weight:bold;">punten mau gombal</p>
+        <p>
+            Honestly, sometimes I still wonder,
+            how can someone be this beautiful, inside and out?
+        </p>
+        <button class="yes-btn" onclick="nextPage(8)">Next ✨</button>
+    </div>
 
-        yesBtn.addEventListener('mouseleave', function() {
-            const currentScale = 1 + (noClickCount * 0.15);
-            this.style.transform = `scale(${currentScale})`;
-        });
+    <!-- Page 8 (Looking Forward – Part 1) -->
+    <div id="page8" class="page">
+        <h1>Looking Forward To</h1>
+        <p>More adventures together</p>
+        <p>More “maen-maen” moments</p>
+        <p>More inside jokes only we understand</p>
+        <button class="yes-btn" onclick="nextPage(9)">Next 📸</button>
+    </div>
 
-        function nextPage(pageNum) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            
-            // Show target page
-            document.getElementById('page' + pageNum).classList.add('active');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
+    <!-- Page 9 (Gallery) -->
+    <div id="page9" class="page">
+        <p>
+            Our photos, screenshots, random memories,  
+            and pictures of you I somehow found everywhere.
+        </p>
+        <a href="#" class="link-button" target="_blank">Go to our galleries 💕</a><br>
+        <button class="yes-btn" onclick="nextPage(10)">Next 💖</button>
+    </div>
 
-        // Initialize no button position
-        window.addEventListener('load', function() {
-            noBtn.style.position = 'relative';
-            noBtn.style.left = '0';
-            noBtn.style.top = '0';
-        });
-    </script>
+    <!-- Page 10 (Final) -->
+    <div id="page10" class="page">
+        <div class="emoji">💖</div>
+        <h1>Always Be My Valentine</h1>
+        <p>
+            Not just today, but in every version of our future.  
+            I choose you, always.
+        </p>
+        <p>- Kevin 😊</p>
+        <a href="https://wa.me/6285725625105" class="wa-button" target="_blank">💬 Chat Me!</a>
+    </div>
+
+</div>
+
+<script>
+    let noClickCount = 0;
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+    const buttonContainer = document.getElementById('buttonContainer');
+
+    noBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        noClickCount++;
+        const maxX = 200, maxY = 60;
+        noBtn.style.left = Math.random() * maxX + 'px';
+        noBtn.style.top = Math.random() * maxY + 'px';
+        noBtn.style.transform = `scale(${Math.max(0.2, 1 - noClickCount * 0.15)})`;
+    });
+
+    function nextPage(n) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById('page' + n).classList.add('active');
+        window.scrollTo(0, 0);
+    }
+</script>
 </body>
 </html>
