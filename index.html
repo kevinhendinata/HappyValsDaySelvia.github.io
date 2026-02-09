@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day Selvia 💖</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Page 1: Welcome -->
+    <div class="page active" id="page1">
+        <div class="content">
+            <h1 class="fade-in">Happy Valentine's Day</h1>
+            <h2 class="fade-in delay-1">For</h2>
+            <h1 class="fade-in delay-2 highlight">Selvia Anggriani</h1>
+            <p class="fade-in delay-3 from-text">From me (siapa lagi kalau bukan saya)</p>
+            <p class="fade-in delay-4 joke-text">⚠️ Warning: May contain excessive sweetness & gombalan ahead</p>
+            <button class="btn fade-in delay-5" onclick="nextPage(2)">Buka Deh 💝</button>
+        </div>
+    </div>
+
+    <!-- Page 2: Question -->
+    <div class="page" id="page2">
+        <div class="content">
+            <h1 class="pulse" id="questionText">Will You Be My Valentine?</h1>
+            <div class="heart-icon">💕</div>
+            <div class="buttons-container">
+                <button class="btn yes-btn" id="yesBtn" onclick="handleYesClick()">YES! 💖</button>
+                <button class="btn no-btn" id="noBtn" onclick="moveNoButton()">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: Confirmation -->
+    <div class="page" id="page3">
+        <div class="content">
+            <h1 class="pulse">Are You Really Sure?</h1>
+            <p class="message">You really want to be my Valentine? 🥺</p>
+            <div class="heart-icon">💗</div>
+            <div class="buttons-container">
+                <button class="btn yes-btn" onclick="nextPage(4)">YES! 💖</button>
+                <button class="btn yes-btn" onclick="nextPage(4)" style="margin-left: 10px;">YES!! 💕</button>
+            </div>
+            <p class="joke-text" style="margin-top: 1rem;">*No is not an option anymore* 😏</p>
+        </div>
+    </div>
+
+    <!-- Page 4: Yay + First Flirt -->
+    <div class="page" id="page4">
+        <div class="content">
+            <h1 class="fade-in">Yay! 🎉</h1>
+            <p class="fade-in delay-1 message">I knew you couldn't resist me! 😏</p>
+            <p class="fade-in delay-2 spicy-text">
+                Baby, are you WiFi?<br>
+                Cause I'm totally feeling a connection here... 📶💕
+            </p>
+            <p class="fade-in delay-3 joke-text">*smooth mode: activated* 😎</p>
+            <button class="btn fade-in delay-4" onclick="nextPage(5)">Kevin, Stop! 😂</button>
+        </div>
+    </div>
+
+    <!-- Page 5: LDR Message -->
+    <div class="page" id="page5">
+        <div class="content">
+            <h2 class="fade-in">Distance Doesn't Matter</h2>
+            <div class="heart-icon fade-in delay-1">🌍💞</div>
+            <p class="fade-in delay-2 ldr-text">
+                We've done more distance before,<br>
+                stayed strong for 2 years... 💪<br><br>
+                New chapter sekarang: closer distance,<br>
+                but still ada jarak sih.<br><br>
+                But I'm sure we'll pass it together 🌟
+            </p>
+            <button class="btn fade-in delay-3" onclick="nextPage(6)">Lanjut! 💫</button>
+        </div>
+    </div>
+
+    <!-- Page 6: Looking Forward -->
+    <div class="page" id="page6">
+        <div class="content">
+            <h2 class="fade-in">Looking Forward...</h2>
+            <p class="fade-in delay-1 ldr-text">
+                Can't wait for the day when...<br><br>
+                "Good morning" texts jadi good morning kisses 😘<br>
+                Video calls jadi real warm hugs 🤗<br>
+                "Miss you" jadi "I'm right here beside you" 💕<br><br>
+                <span style="font-style: italic;">Soon, sayang. Real soon. ✨</span>
+            </p>
+            <button class="btn fade-in delay-2" onclick="nextPage(7)">Uwu Banget Sih 🥺</button>
+        </div>
+    </div>
+
+    <!-- Page 7: Spicy Flirt -->
+    <div class="page" id="page7">
+        <div class="content">
+            <h2 class="fade-in">Btw, quick question...</h2>
+            <p class="fade-in delay-1 spicy-text">
+                Are you a camera? 📸<br>
+                Because every time I look at you,<br>
+                I can't help but smile... 😊
+            </p>
+            <p class="fade-in delay-2 spicy-text">
+                And when we finally meet...<br>
+                I'll make sure that smile never leaves your face 😏<br>
+                <span style="font-size: 0.9rem;">*if you know what I mean* 👀</span>
+            </p>
+            <p class="fade-in delay-3 joke-text">*wink wink* 😉</p>
+            <button class="btn fade-in delay-4" onclick="nextPage(8)">Kevin!! 🫣</button>
+        </div>
+    </div>
+
+    <!-- Page 8: Pantun Ikan Hiu -->
+    <div class="page" id="page8">
+        <div class="content">
+            <h2 class="fade-in">Oke oke, ada pantun nih...</h2>
+            <p class="fade-in delay-1 pantun-text">
+                Ikan hiu makan tomat 🦈🍅<br>
+                I love you sampai akhirat 💕<br><br>
+            </p>
+            <p class="fade-in delay-2 spicy-text">
+                Cheesy? Maybe.<br>
+                But it's true tho 😘
+            </p>
+            <p class="fade-in delay-3 joke-text">*ba dum tss* 🥁</p>
+            <button class="btn fade-in delay-4" onclick="nextPage(9)">Hadehhh Kevin 😂</button>
+        </div>
+    </div>
+
+    <!-- Page 9: Memory Link -->
+    <div class="page" id="page9">
+        <div class="content">
+            <div class="heart-icon big">💗</div>
+            <h2 class="fade-in">Our Beautiful Moments</h2>
+            <p class="fade-in delay-1">Every photo, every memory, every moment with you...</p>
+            <p class="fade-in delay-2 joke-text">Even yang blur gara-gara kamu kedip 😄</p>
+            <a href="https://www.canva.com/design/YOUR_CANVA_LINK_HERE/view" 
+               target="_blank" 
+               class="btn memory-btn fade-in delay-3">
+               Lihat Kenangan Kita 📸
+            </a>
+            <button class="btn fade-in delay-4" onclick="nextPage(10)">Next! 💫</button>
+        </div>
+    </div>
+
+    <!-- Page 10: Another Flirt -->
+    <div class="page" id="page10">
+        <div class="content">
+            <h2 class="fade-in">One more gombalan... I promise 😅</h2>
+            <p class="fade-in delay-1 spicy-text">
+                Kamu tau gak bedanya kamu sama Google Maps?<br><br>
+                Kalau Google Maps nyasar, bisa salah jalan.<br>
+                Kalau kamu? Tetep bikin aku nyasar...<br>
+                <strong>Nyasar di hatimu terus 💕</strong>
+            </p>
+            <p class="fade-in delay-2 joke-text">
+                Iya, I know... cringe banget 😂<br>
+                Tapi kamu suka kan? 😏
+            </p>
+            <button class="btn fade-in delay-3" onclick="nextPage(11)">Yaudah Lanjut Aja 🙈</button>
+        </div>
+    </div>
+
+    <!-- Page 11: Final Message -->
+    <div class="page" id="page11">
+        <div class="content">
+            <div class="heart-icon huge pulse">❤️</div>
+            <h1 class="fade-in">Always Be My Valentine</h1>
+            <p class="fade-in delay-1 final-message">
+                Today, tomorrow, and forever...<br>
+                No matter the distance, no matter what,<br>
+                You'll always have my heart 💖
+            </p>
+            <p class="fade-in delay-2 ldr-text">
+                Here's to us, our journey, and our future together 🌟<br>
+                <span style="font-style: italic; font-size: 0.95rem;">Sampai kakek nenek nanti ya 👴👵💕</span>
+            </p>
+            <p class="fade-in delay-3 signature">
+                With all my love,<br>
+                <strong>Kevin</strong> ✨
+            </p>
+            <p class="fade-in delay-4 joke-text" style="margin-top: 2rem;">
+                If you want to chat (or roast me for the gombalan) 📱
+            </p>
+            <a href="https://wa.me/6285725625105" 
+               target="_blank" 
+               class="btn whatsapp-btn fade-in delay-5">
+               💬 Chat Me on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
