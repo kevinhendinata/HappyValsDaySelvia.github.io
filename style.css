@@ -243,21 +243,22 @@ p {
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
-    min-height: 100px;
+    min-height: 120px;
     position: relative;
 }
 
 .yes-btn {
     background: linear-gradient(135deg, #ff6b9d, #c44569);
     font-size: 1.2rem;
-    animation: grow 0.5s ease;
+    transition: all 0.3s ease;
+    position: relative;
     z-index: 10;
 }
 
 .no-btn {
     background: linear-gradient(135deg, #7f8c8d, #95a5a6);
     color: white;
-    position: static;
+    position: relative;
     transition: all 0.2s ease;
     z-index: 5;
 }

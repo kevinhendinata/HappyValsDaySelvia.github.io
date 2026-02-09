@@ -30,9 +30,9 @@ function nextPage(pageNumber) {
     currentPage.classList.remove('active');
     nextPage.classList.add('active');
     
-    // Reset yes button size when going to page 2
+    // Reset yes/no button states when going to page 2
     if (pageNumber === 2) {
-        clickCount = 0; // Reset click count
+        clickCount = 0;
         const yesBtn = document.getElementById('yesBtn');
         yesBtn.style.transform = 'scale(1)';
         yesBtn.style.fontSize = '1.2rem';
@@ -42,8 +42,10 @@ function nextPage(pageNumber) {
         noBtn.style.fontSize = '1.2rem';
         noBtn.style.padding = '15px 40px';
         noBtn.style.pointerEvents = 'auto';
-        noBtn.style.position = 'absolute';
-        noBtn.style.transform = 'translate(0, 0)';
+        noBtn.style.position = 'relative';
+        noBtn.style.left = 'auto';
+        noBtn.style.top = 'auto';
+        noBtn.style.transform = 'none';
         
         // Reset question text
         const questionText = document.getElementById('questionText');
@@ -51,32 +53,28 @@ function nextPage(pageNumber) {
     }
 }
 
-// Handle Yes button click - go to confirmation page
-function handleYesClick() {
-    nextPage(3);
-}
-
 // Move No button and grow Yes button
 let clickCount = 0;
-const maxClicks = 15; // Increased from 8 to 15
+const maxClicks = 15;
 
 function moveNoButton() {
     clickCount++;
     const noBtn = document.getElementById('noBtn');
-    noBtn.style.position = 'absolute';
     const yesBtn = document.getElementById('yesBtn');
-    const container = document.querySelector('#page2 .content');
+    const container = document.querySelector('#page2 .buttons-container');
     const containerRect = container.getBoundingClientRect();
     
     // Calculate random position with more extreme movements
     const maxX = containerRect.width - 50;
     const maxY = containerRect.height - 50;
-    const randomX = (Math.random() - 0.5) * maxX * 1.5;
-    const randomY = (Math.random() - 0.5) * maxY * 1.5;
+    const randomX = (Math.random() - 0.5) * maxX * 1.2;
+    const randomY = (Math.random() - 0.5) * maxY * 1.2;
     
     // Move no button
     noBtn.style.position = 'absolute';
-    noBtn.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${Math.random() * 360}deg)`;
+    noBtn.style.left = '50%';
+    noBtn.style.top = '50%';
+    noBtn.style.transform = `translate(calc(-50% + ${randomX}px), calc(-50% + ${randomY}px)) rotate(${Math.random() * 360}deg)`;
     
     // Shrink no button more gradually
     const newSize = Math.max(0.1, 1 - (clickCount * 0.06));
@@ -113,7 +111,7 @@ function moveNoButton() {
         '😢 You\'re breaking my heart...',
         '💖 Come on, just click YES!',
         '🌹 I know you want to...',
-        '💝 Pretty please? 🥺',
+        '💝 Pretty please?',
         '❤️ You know you love me!',
         '😭 I flew across the screen for this...',
         '💫 The universe wants us together!',
@@ -121,7 +119,7 @@ function moveNoButton() {
         '😂 Nice try, but NO escape!',
         '🙈 Why are you like this?',
         '💗 Fine, I\'ll wait... forever if I have to',
-        '✨ Last chance before I cry! 😭'
+        '✨ Last chance before I cry!'
     ];
     
     if (clickCount <= messages.length) {
