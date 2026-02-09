@@ -257,7 +257,7 @@ p {
 .no-btn {
     background: linear-gradient(135deg, #7f8c8d, #95a5a6);
     color: white;
-    position: absolute;
+    position: static;
     transition: all 0.2s ease;
     z-index: 5;
 }
